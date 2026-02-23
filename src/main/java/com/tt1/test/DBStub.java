@@ -1,37 +1,31 @@
-package com.tt1.repository;
+package com.tt1.test;
 
-import com.tt1.model.ToDo;
+import com.tt1.test.ToDo;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import java.util.Set;
 
 public class DBStub {
     private List<ToDo> tareas = new ArrayList<>();
 
-    public void guardar(ToDo tarea) {
-        tareas.add(tarea);
+
+    private Set<String> agendaEmails = new HashSet<>();
+
+    public void insertarTarea(ToDo tarea) {
+        throw new UnsupportedOperationException("Clase aún no implementada.");
     }
 
-    public List<ToDo> obtenerTodas() {
-        return new ArrayList<>(tareas);
+    public List<ToDo> getTodasLasTareas() {
+        throw new UnsupportedOperationException("Clase aún no implementada.");
     }
 
-    public Optional<ToDo> buscarPorNombre(String nombre) {
-        return tareas.stream()
-                .filter(t -> t.getNombre().equalsIgnoreCase(nombre))
-                .findFirst();
+    // --- Métodos para la Agenda ---
+    public void insertarEmail(String email) {
+        throw new UnsupportedOperationException("Clase aún no implementada.");
     }
 
-    public boolean borrarPorNombre(String nombre) {
-        return tareas.removeIf(t -> t.getNombre().equalsIgnoreCase(nombre));
-    }
-
-    public void vaciar() {
-        tareas.clear();
-    }
-    
-    public int totalTareas() {
-        return tareas.size();
+    public Set<String> getAgenda() {
+        throw new UnsupportedOperationException("Clase aún no implementada.");
     }
 }
