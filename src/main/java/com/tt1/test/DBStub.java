@@ -7,9 +7,6 @@ import java.util.List;
 import java.util.Set;
 
 public class DBStub {
-    private List<ToDo> tareas = new ArrayList<>();
-
-
     private Set<String> agendaEmails = new HashSet<>();
 
     public void insertarTarea(ToDo tarea) {
@@ -20,7 +17,6 @@ public class DBStub {
         throw new UnsupportedOperationException("Clase aún no implementada.");
     }
 
-    // --- Métodos para la Agenda ---
     public void insertarEmail(String email) {
         throw new UnsupportedOperationException("Clase aún no implementada.");
     }
