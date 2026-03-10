@@ -1,0 +1,29 @@
+name: Generar y Publicar Javadoc
+
+on:
+  push:
+    branches:
+      - stable  # Solo se ejecuta cuando hay cambios en la rama estable
+
+jobs:
+  build-javadoc:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v3
+
+      - name: Configurar JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Generar Javadoc
+        run: javadoc -d doc -sourcepath src -subpackages com.tt1.test
+
+      - name: Desplegar en GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: doc # Carpeta donde se generó el HTML
+          branch: gh-pages # Rama donde se subirá la web
