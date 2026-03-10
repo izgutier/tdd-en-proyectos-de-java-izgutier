@@ -3,7 +3,8 @@ package com.tt1.test;
 import java.util.logging.Logger;
 
 public class MailerStub {
-    public void enviar(String destinatario, String mensaje) {
-        LOGGER.info("Enviando correo a: " + destinatario + " | Mensaje: " + mensaje);
+    public boolean enviar(String destinatario, String mensaje) {
+        System.out.println("Enviando correo a: " + destinatario + " | Mensaje: " + mensaje);
+        return true;
     }
 }

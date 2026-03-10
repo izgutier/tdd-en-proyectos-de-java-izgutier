@@ -1,34 +1,22 @@
 package com.tt1.test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.time.LocalDate;
+
 
 class ToDoTest {
 
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-	}
-
-	@BeforeEach
-	void setUp() throws Exception {
-	}
-
-	@AfterEach
-	void tearDown() throws Exception {
-	}
-
 	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
+    void testCrearYConsultarToDo() {
+        String nombre = "Practica 3";
+        LocalDate fecha = LocalDate.now().plusDays(7);
+        
+        ToDo tarea = new ToDo(nombre, "Finalizar tests", fecha);
+        
+        assertEquals(nombre, tarea.getNombre()); 
+        assertEquals(fecha, tarea.getFechaLimite());
+        
+    }
 
 }
