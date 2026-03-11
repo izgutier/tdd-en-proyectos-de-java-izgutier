@@ -3,7 +3,7 @@ name: Generar y Publicar Javadoc
 on:
   push:
     branches:
-      - stable  # Solo se ejecuta cuando hay cambios en la rama estable
+      - main  # Solo se ejecuta cuando hay cambios en la rama estable
 
 jobs:
   build-javadoc:
