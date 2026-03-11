@@ -20,7 +20,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Generar Javadoc
-        run: javadoc -d doc -sourcepath src -subpackages com.tt1.test
+        run: javadoc -d doc -sourcepath src/main/java -subpackages com.tt1.test
 
       - name: Desplegar en GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
